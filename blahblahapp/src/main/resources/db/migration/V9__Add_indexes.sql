@@ -1,0 +1,9 @@
+CREATE INDEX idx_users_username ON users(username);
+CREATE INDEX idx_users_email ON users(email);
+CREATE INDEX idx_channel_members_channel_id ON channel_members(channel_id);
+CREATE INDEX idx_channel_members_user_id ON channel_members(user_id);
+CREATE INDEX idx_messages_sender_id ON messages(sender_id);
+CREATE INDEX idx_messages_channel_id ON messages(channel_id);
+CREATE INDEX idx_messages_chat_id ON messages(chat_id);
+CREATE INDEX idx_chats_user1_id ON chats(user1_id);
+CREATE INDEX idx_chats_user2_id ON chats(user2_id);

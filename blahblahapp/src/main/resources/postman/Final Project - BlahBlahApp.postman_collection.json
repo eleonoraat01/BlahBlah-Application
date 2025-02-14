@@ -1,0 +1,1089 @@
+{
+	"info": {
+		"_postman_id": "1916e4bc-7c75-4f8b-b9a7-a13c66b113c0",
+		"name": "Final Project - BlahBlahApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39143212"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"testuser5\",\r\n    \"email\": \"test5@test.com\",\r\n    \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"testuser5\",\r\n    \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjUiLCJpYXQiOjE3MzkzMTk2MjgsImV4cCI6MTczOTQwNjAyOH0.Xn3CwezkNW5iHPm5ThqIG4rlPdQo_QY06el7zpdv15o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "frienships",
+					"item": [
+						{
+							"name": "Add friend",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM5MDM4Njg4LCJleHAiOjE3MzkxMjUwODh9.WkcGQwJ7lh4XXYlIV2JR9EgRQWxTNY330xaCUUoXrGc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"friendId\": 62\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/friendships",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"friendships"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all user friends",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM5MDI3OTQ5LCJleHAiOjE3MzkxMTQzNDl9.TFiR6F-B8_Vgcszo7eKBfFB-8DSEbWyczv-cUk6sVhM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/friendships/59",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"friendships",
+										"59"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove friend",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM5MDI3OTQ5LCJleHAiOjE3MzkxMTQzNDl9.TFiR6F-B8_Vgcszo7eKBfFB-8DSEbWyczv-cUk6sVhM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/friendships/62",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"friendships",
+										"62"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get single user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/69",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"69"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/search?query=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/68",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"68"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chats",
+			"item": [
+				{
+					"name": "error test cases",
+					"item": [
+						{
+							"name": "Send message to not existing user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM4Njk5ODQ5LCJleHAiOjE3Mzg3ODYyNDl9.JTbsyzdXwbka01OI4Pww0gzpyczV6i3eEi5ZZHH1r8Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"recipient\": 999\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/chats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Send message to not existing chat",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM4Njk5ODQ5LCJleHAiOjE3Mzg3ODYyNDl9.JTbsyzdXwbka01OI4Pww0gzpyczV6i3eEi5ZZHH1r8Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"Just a test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/chats/999/messages",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										"999",
+										"messages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Send message to not a friend",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM4ODc4Mzg5LCJleHAiOjE3Mzg5NjQ3ODl9.NuQakOV5cMBmZ7Kha5jGUJI--DpCV27OOi9DAE3E1NM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"recipient\": 60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/chats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create new chat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM5MTA3ODk5LCJleHAiOjE3MzkxOTQyOTl9.tBJ9SazhYbTLMPX8d1qgwU8GxiNc3Rf42fKsaZ2nCQU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipient\": 62\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chats",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single chat",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM5MTA3ODk5LCJleHAiOjE3MzkxOTQyOTl9.tBJ9SazhYbTLMPX8d1qgwU8GxiNc3Rf42fKsaZ2nCQU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chats/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chats",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send message to a friend",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM5MjM1OTI5LCJleHAiOjE3MzkzMjIzMjl9.LGFfDH9Io4YS-lrVZ0-jzgIzea7pKSpOmiG8RzncwrY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Hi!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chats/2/messages",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chats",
+								"2",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get messages from chat with a friend",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM5MTA3ODk5LCJleHAiOjE3MzkxOTQyOTl9.tBJ9SazhYbTLMPX8d1qgwU8GxiNc3Rf42fKsaZ2nCQU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Hello dear friend!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chats/1/messages",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chats",
+								"1",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM4Njk5ODQ5LCJleHAiOjE3Mzg3ODYyNDl9.JTbsyzdXwbka01OI4Pww0gzpyczV6i3eEi5ZZHH1r8Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"content\": \"Just updated a message!\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chats/1/messages/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chats",
+								"1",
+								"messages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "channels",
+			"item": [
+				{
+					"name": "admins",
+					"item": [
+						{
+							"name": "Promote admin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM4NTM1Nzc5LCJleHAiOjE3Mzg2MjIxNzl9.1ct9TYctyBJiCBFlQWw0J9i_422Z0ztYG0f0_ZYQapk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"channelId\": 4,\r\n    \"userId\": 60,\r\n    \"role\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/channels/4/members/60/promote",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										"4",
+										"members",
+										"60",
+										"promote"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Demote admin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM4NTM1Nzc5LCJleHAiOjE3Mzg2MjIxNzl9.1ct9TYctyBJiCBFlQWw0J9i_422Z0ztYG0f0_ZYQapk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"channelId\": 4,\r\n    \"userId\": 60,\r\n    \"role\": \"member\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/channels/4/members/60/demote",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										"4",
+										"members",
+										"60",
+										"demote"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "update info",
+					"item": [
+						{
+							"name": "Update channel info",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM4NjI0ODc2LCJleHAiOjE3Mzg3MTEyNzZ9.NwJlsEWfRHTkFy-2uF0TIrxE4lfwUO7Z4QlZ_TBiL_U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"WOW Update is working\",\r\n    \"description\": \"This is the new description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/channels/4",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update channel name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM4NjI0ODc2LCJleHAiOjE3Mzg3MTEyNzZ9.NwJlsEWfRHTkFy-2uF0TIrxE4lfwUO7Z4QlZ_TBiL_U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"WOW Update is working again!!!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/channels/4",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update channel description",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM4NjI0ODc2LCJleHAiOjE3Mzg3MTEyNzZ9.NwJlsEWfRHTkFy-2uF0TIrxE4lfwUO7Z4QlZ_TBiL_U",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Description update\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/channels/4",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"channels",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create new",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM5MTQ0NTAzLCJleHAiOjE3MzkyMzA5MDN9.aKuUrfeZDA-QU_U4sLhHs-4If2sq9dZnWs3VsDnAolA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Channel new\",\r\n    \"description\": \"This is my new test channel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/channels",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete channel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM4NjExMDQwLCJleHAiOjE3Mzg2OTc0NDB9.DluNSY1apE0lfOupssM5kJygd9swJ59r9FLqr7rvUTQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/channels/5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM5MjgyODc3LCJleHAiOjE3MzkzNjkyNzd9.DtCRuHlg60RRDI61rUqiOY-pr3Z7pKdaZZpLb3_J3fk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 69\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/channels/14/members",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								"14",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM5MTQyNDE5LCJleHAiOjE3MzkyMjg4MTl9.7VfOj5a8G_gvatuY3YgL-Rcix4_yuNNGZk4z2KJ8LVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/channels/4/members/60",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								"4",
+								"members",
+								"60"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjUiLCJpYXQiOjE3MzkyODI5NTksImV4cCI6MTczOTM2OTM1OX0.E1Viu0ZrrqJX5Rd1xWnaokzQat-Klbgk1GjyduD5vAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Hello!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/channels/14/messages",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								"14",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get channel messages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjE0IiwiaWF0IjoxNzM5MTA3ODk5LCJleHAiOjE3MzkxOTQyOTl9.tBJ9SazhYbTLMPX8d1qgwU8GxiNc3Rf42fKsaZ2nCQU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/channels/4/messages",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								"4",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  all user channels",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjUiLCJpYXQiOjE3Mzk0ODI5NzksImV4cCI6MTczOTU2OTM3OX0.UUXqedMhTONcs1YkcMoVVVz0mJfEhZkq85j5NUirh64",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/channels/69",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"channels",
+								"69"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
